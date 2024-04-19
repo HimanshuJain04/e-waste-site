@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Electrotrash Services</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="service.css" />
+  </head>
+  <body>
+    <div id="header-container"></div>
+
+    <div class="cards-container">
+      <!-- card -->
+      <div class="card">
+        <div class="card-header">
+          <h2>VALUE RECOVERY :</h2>
+        </div>
+        <div class="card-body">
+          <p>
+            All our services and processes are in full compliance with federal,
+            state, and local regulations. All recycling processes as well as
+            downstream vendors have been recommended by third party auditing
+            firms. Your confidential data is properly managed and securely
+            destroyed Our employees work in a safe environment.
+          </p>
+          <p>
+            Our transparent process provides detailed information back to our
+            clients at every step throughout the service cycle. We generate a
+            thorough report on every product we receive, whether the items are
+            being refurbished and reused, or dismantled and recycled.
+          </p>
+          <p>
+            Our locations are monitored 24/7 by closed circuit cameras, and our
+            technicians are thoroughly screened and participate in on-going
+            training to maintain the highest level of security standards.
+            EWASTE+ ITAD services are fully integrated with our secure NAID Data
+            Destruction procedures for ultimate peace of mind.
+          </p>
+        </div>
+      </div>
+
+      <!-- card -->
+      <div class="card">
+        <div class="card-header">
+          <h2>DATA DESTRUCTION :</h2>
+        </div>
+        <div class="card-body">
+          <p>
+            Our rigorous data destruction process includes secure collection and
+            handling, documented chain-of custody, asset inventory and serial
+            number tracking, and ensures that your confidential information is
+            never exposed and that your organization is protected from risk.
+          </p>
+          <p>OPTIONAL NAID-CERTIFIED SERVICES</p>
+          <p>-Dedicated truck pick up</p>
+          <p>-Locked bins and totes for loose data devices</p>
+          <p>-Videotaped or witnessed destruction</p>
+        </div>
+      </div>
+
+      <!-- card -->
+      <div class="card">
+        <div class="card-header">
+          <h2>ACCEPTABLE :</h2>
+        </div>
+        <div class="card-body">
+          <p>
+            Batteries, Business Machines, Cables & IT accessories, Cameras,
+            Computer peripherals (mice, keyboards, webcams, speakers,
+            microphones), Computers, Copiers, Electronics Scrap, Fax Machines,
+            Fluorescent Lamps, Gaming devices, GPS units, Lab & medical
+            electronics, Laptops, Mainframe/ Midrange, Mobile devices (cell
+            Phones, Tablets, PDAs, MP3 players), Monitors, Networking Gear,
+            Phone systems, Power supplies, Printers & plotters (ink, toner, &
+            cartridges), Routers & switches,Scanners,Scientific
+            Equipment,Security equipment,Servers & server racks,Stereo
+            equipment,Storage devices (external hard drives, solid state drives,
+            SD cards, memory cards, card readers),Telecommunications
+            Equipment,Televisions,Terminals,Typewriters,UPS,Video & audio
+            equipment,Wiring & Cabling.
+          </p>
+        </div>
+      </div>
+
+      <!-- card -->
+      <div class="card">
+        <div class="card-header">
+          <h2>UNACCEPTABLE :</h2>
+        </div>
+        <div class="card-body">
+          <p>
+            Carbon monoxide detectors Dehumidifiers Devices containing liquid
+            mercury (thermostats, switches, medical devices, thermometers) Freon
+            containing devices/materials (refrigerators, air conditioners,
+            dehumidifiers) Gas powered equipment Household hazardous waste Large
+            appliances (stoves, washers, dryers, dishwashers) Liquids PCB
+            ballasts Propane tanks Radioactive materials Small appliances
+            (toasters, vacuum cleaners, coffee makers, irons, hair dryers) Smoke
+            detectors Wet cell batteries.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const headerContainer = document.getElementById("header-container");
+      fetch("header.html")
+        .then((response) => response.text())
+        .then((data) => {
+          headerContainer.innerHTML = data;
+        });
+    });
+  </script>
+</html>
