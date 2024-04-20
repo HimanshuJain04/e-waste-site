@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+
+        .superdiv{
+
+             width: 100%;
+             height: 100%;
+
+        }
+
+      select {
+        padding: 9px;
+        margin-top: 10px;
+      }
+
+      .credits {
+
+        background: greenyellow;
+        border-radius: 8px;
+        color: white;
+        font-weight: 700;
+
+      }
+
+      .maindiv {
+
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 600px;
+        margin: 0 auto;
+
+      }
+
+      .item {
+        display: flex;
+        gap: 60px;
+      }
+
+      table {
+        border-collapse: collapse;
+        width: 600px;
+        border: 1px solid #dddddd;
+      }
+
+      th,
+      td {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+      }
+
+      .phoneInfoTable{
+
+        margin-top: 20px;
+
+      }
+    </style>
+  </head>
+  <body>
+
+
+
+    <div class="superdiv">
+
+        <div class="maindiv">
+
+            <div>
+
+                <div>
+          
+                  <h1>Calculate Your Ideal credits</h1>
+                  
+                </div>
+          
+                <div class="item">
+          
+                  <select name="cars" id="cars">
+          
+                    <option value="phone" selected>Phone</option>
+                    <option value="laptop">Laptop</option>
+          
+                  </select>
+          
+                  <select name="varieties" id="varieties"></select>
+          
+                  <button class="credits" onclick="checkCredits()">Check credits</button>
+          
+                </div>
+
+            </div>
+
+            
+          <div id="phoneInfoTable">
+    
+            <!-- Table for displaying phone information will be added here -->
+    
+          </div>
+    
+        </div>
+
+    </div>
+
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Populate varieties dropdown based on the default selection
+        populateVarietiesDropdown();
+
+        // Add change event listener to the cars dropdown
+        document.getElementById("cars").addEventListener("change", function () {
+          populateVarietiesDropdown();
+        });
+      });
+
+      function populateVarietiesDropdown() {
+        var carType = document.getElementById("cars").value;
+        var varietiesDropdown = document.getElementById("varieties");
+
+        // Clear previous options
+        varietiesDropdown.innerHTML = "";
+
+        if (carType === "phone") {
+          // Add phone varieties
+          var phones = ["iPhone", "Samsung", "Google Pixel", "OnePlus"];
+          phones.forEach(function (phone) {
+            var option = document.createElement("option");
+            option.textContent = phone;
+            option.value = phone.toLowerCase(); // Set value to lowercase for consistency
+            varietiesDropdown.appendChild(option);
+          });
+        } else if (carType === "laptop") {
+          // Add laptop varieties
+          var laptops = [
+            "MacBook",
+            "Dell XPS",
+            "HP Spectre",
+            "Lenovo ThinkPad",
+          ];
+          laptops.forEach(function (laptop) {
+            var option = document.createElement("option");
+            option.textContent = laptop;
+            option.value = laptop.toLowerCase(); // Set value to lowercase for consistency
+            varietiesDropdown.appendChild(option);
+          });
+        }
+      }
+
+      function checkCredits() {
+        var selectedVariety = document.getElementById("varieties").value;
+        var phoneInfoTable = document.getElementById("phoneInfoTable");
+
+        // Clear previous table content
+        phoneInfoTable.innerHTML = "";
+
+        // For demonstration, let's just display the selected variety
+        var table = document.createElement("table");
+
+        var tr = document.createElement("tr"); // for slected category
+
+        var tr1 = document.createElement("tr"); // for main tables columns
+
+        var th1 = document.createElement("th");
+        var th2 = document.createElement("th");
+        var th3 = document.createElement("th");
+
+        th1.textContent = "Element Name";
+        th2.textContent = "Weights";
+        th3.textContent = "Credits";
+
+        //
+
+        tr1.appendChild(th1);
+        tr1.appendChild(th2);
+        tr1.appendChild(th3);
+
+        //   element name array
+
+        let elementName = [
+          "Magnesium ",
+          "Copper",
+          "Aluminium",
+          "Iron",
+          "Zinc",
+          "Gold",
+          "Silver",
+          "Paladium",
+        ];
+
+        let weight = ["116", "183", "85", "141", "1", "0.13", "0.5", "0.03"];
+
+        let creDitsPerGram = [
+          "2.0",
+          "1.0",
+          "1.0",
+          "1.0",
+          "1.0",
+          "5.6",
+          "7.5",
+          "3.6",
+        ];
+
+        var tdValue = document.createElement("td");
+        tdValue.textContent = selectedVariety;
+        tr.appendChild(tdValue);
+        table.appendChild(tr);
+        table.appendChild(tr1);
+
+        //----------------------------
+
+        for (let i = 0; i < elementName.length; i++) {
+
+          let tr = document.createElement("tr");
+          let eleName = document.createElement("td");
+          let eleWeight = document.createElement("td");
+          let eleCredits = document.createElement("td");
+
+          eleName.textContent = elementName[i];
+          eleWeight.textContent = weight[i];
+          eleCredits.textContent = creDitsPerGram[i];
+
+          tr.appendChild(eleName);
+          tr.appendChild(eleWeight);
+          tr.appendChild(eleCredits);
+
+          table.appendChild(tr);
+
+        }
+
+        
+
+        // ---------------------
+
+        phoneInfoTable.appendChild(table);
+
+      }
+    </script>
+  </body>
+</html>
