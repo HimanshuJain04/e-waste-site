@@ -33,15 +33,27 @@ a {
   width: 100%;
   justify-content: space-between;
 }
-.nav_logo,
+
 .nav_link,
 .button {
   color: #000;
   font-weight: 600;
 }
 .nav_logo {
-  font-size: 25px;
+  height: 80px;
+  max-width: 100px;
+  display: flex;
+  background-size: cover;
 }
+
+.logo-image {
+  transform: scale(2);
+  -webkit-transform: scale(2);
+  -moz-transform: scale(2);
+  -ms-transform: scale(2);
+  -o-transform: scale(2);
+}
+
 .nav_item {
   column-gap: 25px;
 }

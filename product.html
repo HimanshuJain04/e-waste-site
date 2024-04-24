@@ -4,15 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
 
     <style>
-
-        .superdiv{
-
-             width: 100%;
-             height: 100%;
-
-        }
+      .superdiv {
+        width: 100%;
+        height: 100%;
+      }
 
       select {
         padding: 9px;
@@ -20,22 +18,19 @@
       }
 
       .credits {
-
         background: greenyellow;
         border-radius: 8px;
         color: white;
         font-weight: 700;
-
       }
 
       .maindiv {
-
         display: flex;
         flex-direction: column;
         gap: 10px;
         width: 600px;
         margin: 0 auto;
-
+        padding-top: 150px;
       }
 
       .item {
@@ -56,57 +51,40 @@
         padding: 8px;
       }
 
-      .phoneInfoTable{
-
+      .phoneInfoTable {
         margin-top: 20px;
-
       }
     </style>
   </head>
   <body>
-
-
+    <div id="header-container"></div>
 
     <div class="superdiv">
-
-        <div class="maindiv">
-
-            <div>
-
-                <div>
-          
-                  <h1>Calculate Your Ideal credits</h1>
-                  
-                </div>
-          
-                <div class="item">
-          
-                  <select name="cars" id="cars">
-          
-                    <option value="phone" selected>Phone</option>
-                    <option value="laptop">Laptop</option>
-          
-                  </select>
-          
-                  <select name="varieties" id="varieties"></select>
-          
-                  <button class="credits" onclick="checkCredits()">Check credits</button>
-          
-                </div>
-
-            </div>
-
-            
-          <div id="phoneInfoTable">
-    
-            <!-- Table for displaying phone information will be added here -->
-    
+      <div class="maindiv">
+        <div>
+          <div>
+            <h1>Calculate Your Ideal credits</h1>
           </div>
-    
+
+          <div class="item">
+            <select name="cars" id="cars">
+              <option value="phone" selected>Phone</option>
+              <option value="laptop">Laptop</option>
+            </select>
+
+            <select name="varieties" id="varieties"></select>
+
+            <button class="credits" onclick="checkCredits()">
+              Check credits
+            </button>
+          </div>
         </div>
 
+        <div id="phoneInfoTable">
+          <!-- Table for displaying phone information will be added here -->
+        </div>
+      </div>
     </div>
-
 
     <script>
       document.addEventListener("DOMContentLoaded", function () {
@@ -215,7 +193,6 @@
         //----------------------------
 
         for (let i = 0; i < elementName.length; i++) {
-
           let tr = document.createElement("tr");
           let eleName = document.createElement("td");
           let eleWeight = document.createElement("td");
@@ -230,16 +207,23 @@
           tr.appendChild(eleCredits);
 
           table.appendChild(tr);
-
         }
-
-        
 
         // ---------------------
 
         phoneInfoTable.appendChild(table);
-
       }
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const headerContainer = document.getElementById("header-container");
+        fetch("header.html")
+          .then((response) => response.text())
+          .then((data) => {
+            headerContainer.innerHTML = data;
+          });
+      });
     </script>
   </body>
 </html>

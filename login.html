@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - E-Waste Management</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(to right, #74ebd5, #acb6e5);
+        margin: 0;
+        padding: 0;
+      }
+      .login-container {
+        width: 700px;
+        margin: 100px auto;
+        padding: 20px;
+        background: #fff;
+        box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+        border-radius: 30px;
+        display: flex;
+        gap: 20px;
+      }
+      .logo {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+      .logo img {
+        width: 100%;
+        height: auto;
+        border-radius: 30px;
+      }
+      input[type="email"],
+      input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ddd;
+        box-sizing: border-box;
+      }
+      input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        background-color: #5cb85c;
+        border: none;
+        color: white;
+        cursor: pointer;
+      }
+      input[type="submit"]:hover {
+        background-color: #4cae4c;
+      }
+      .sideimage img {
+        width: 350px;
+        height: 370px;
+        gap: 20px;
+        border-radius: 30px;
+        /* opacity:0.6; */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="login-container">
+      <div class="logo">
+        <!-- Replace 'logo.png' with your actual logo image -->
+        <img src="e waste logo.jpg" alt="E-Waste Management Logo" />
+
+        <form>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Email ID"
+            required
+          />
+          <input
+            id="password"
+            type="password"
+            name="password"
+            placeholder="Password"
+            required
+          />
+          <input type="submit" id="button" value="continue" />
+        </form>
+      </div>
+      <div class="sideimage">
+        <img src="bansal.png" alt="" srcset="" />
+      </div>
+    </div>
+  </body>
+
+  <script>
+    document.getElementById("button").addEventListener("click", () => {
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      if (email && password) {
+        alert("Logged in successfully!");
+      } else {
+        alert("Please fill in all fields.");
+      }
+      console.log(object);
+    });
+  </script>
+</html>
